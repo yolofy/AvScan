@@ -7,7 +7,7 @@ Usage example for windows defender:
 ```
   var exeLocation = @"C:\Program Files\Windows Defender\MpCmdRun.exe";
   var scanner = new WindowsDefenderScanner(exeLocation);
-  var result = scanner.Scan("C:\virus.txt");
+  var result = scanner.Scan(@"C:\virus.txt");
   Console.WriteLine(result);
 ```
 
@@ -16,7 +16,7 @@ Usage example for ESET
 ```
   var exeLocation = @"C:\Program Files\ESET\ESET Endpoint Antivirus\ecls.exe";
   var scanner = new EsetScanner(exeLocation);
-  var result = scanner.Scan("C:\virus.txt");
+  var result = scanner.Scan(@"C:\virus.txt");
   Console.WriteLine(result);
 ```
 
