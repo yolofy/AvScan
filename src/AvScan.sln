@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.Core", "AvScan.Core\AvScan.Core.csproj", "{9E3C3E5A-6397-42F7-8579-3DB875B2817E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.WindowsDefender", "AvScan.WindowsDefender\AvScan.WindowsDefender.csproj", "{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.EsetScanner", "AvScan.EsetScanner\AvScan.EsetScanner.csproj", "{24512945-EF02-4F39-A638-71423F02520A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.ConsoleTest", "AvScan.ConsoleTest\AvScan.ConsoleTest.csproj", "{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E3C3E5A-6397-42F7-8579-3DB875B2817E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3C3E5A-6397-42F7-8579-3DB875B2817E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3C3E5A-6397-42F7-8579-3DB875B2817E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3C3E5A-6397-42F7-8579-3DB875B2817E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24512945-EF02-4F39-A638-71423F02520A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24512945-EF02-4F39-A638-71423F02520A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24512945-EF02-4F39-A638-71423F02520A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24512945-EF02-4F39-A638-71423F02520A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
