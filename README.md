@@ -21,7 +21,7 @@ Usage example for ESET
 ```
 
 ###Avast
-Usage example for Avast
+Usage example for Avast (ashcmd is shipped in paid versions only)
 ```
   var exeLocation = @"C:\Program Files\AVAST Software\Avast\ashcmd.exe";
   var scanner = new AvastScanner(exeLocation);
