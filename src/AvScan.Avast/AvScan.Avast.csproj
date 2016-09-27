@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9E3C3E5A-6397-42F7-8579-3DB875B2817E}</ProjectGuid>
+    <ProjectGuid>{BDBD66B0-88AA-4E75-896E-67357C35EFBD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AvScan.Core</RootNamespace>
-    <AssemblyName>AvScan.Core</AssemblyName>
+    <RootNamespace>AvScan.Avast</RootNamespace>
+    <AssemblyName>AvScan.Avast</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -28,7 +28,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\AvScan.Core.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\AvScan.Avast.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -41,9 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IScanner.cs" />
+    <Compile Include="AvastScanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScanResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AvScan.Core\AvScan.Core.csproj">
+      <Project>{9E3C3E5A-6397-42F7-8579-3DB875B2817E}</Project>
+      <Name>AvScan.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
