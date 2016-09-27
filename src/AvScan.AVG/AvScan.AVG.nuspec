@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-     <id>AvScan.WindowsDefender</id>
+    <id>AvScan.AVG</id>
 	<version>1.0.3</version>
-    <title>AvScan.WindowsDefender</title>
+    <title>AvScan.AVG</title>
     <authors>Yolofy</authors>
     <owners>Yolofy</owners>
     <licenseUrl>https://github.com/yolofy/AvScan/blob/master/LICENSE</licenseUrl>
@@ -12,7 +12,7 @@
     <description>CLI wrappers for virus scanners.</description>
     <releaseNotes>Initial release</releaseNotes>
     <copyright>Copyright 2016</copyright>
-    <tags>VirusScan Virus ESET WindowsDefender CLI</tags>
+    <tags>VirusScan Virus Avast ESET WindowsDefender CLI AVG</tags>
 	<dependencies>
 		<dependency id="AvScan.Core" version="1.0.3" />
 	</dependencies>

@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>AvScan.Avast</id>
-	<version>1.0.0</version>
+	<version>1.0.3</version>
     <title>AvScan.Avast</title>
     <authors>Yolofy</authors>
     <owners>Yolofy</owners>
@@ -14,7 +14,7 @@
     <copyright>Copyright 2016</copyright>
     <tags>VirusScan Virus Avast ESET WindowsDefender CLI</tags>
 	<dependencies>
-		<dependency id="AvScan.Core" version="1.0.0" />
+		<dependency id="AvScan.Core" version="1.0.3" />
 	</dependencies>
   </metadata>
 </package>
