@@ -29,5 +29,15 @@ Usage example for Avast (ashcmd is shipped in paid versions only)
   Console.WriteLine(result);
 ```
 
+###AVG
+Usage example for AVG (avgscanx.exe is x86, avgscana.exe is x64)
+```
+  var exeLocation = @"C:\Program Files (x86)\AVG\Av\avgscanx.exe";
+  var scanner = new AVGScanner(exeLocation);
+  var result = scanner.Scan(@"C:\virus.txt");
+  Console.WriteLine(result);
+```
+
+
 You can use the eicar file for testing purposes: http://www.eicar.org/86-0-Intended-use.html
 
