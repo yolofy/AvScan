@@ -20,7 +20,7 @@ Usage example for ESET
   Console.WriteLine(result);
 ```
 
-##Avast
+###Avast
 Usage example for Avast
 ```
   var exeLocation = @"C:\Program Files\AVAST Software\Avast\ashcmd.exe";
