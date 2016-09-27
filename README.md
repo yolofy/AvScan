@@ -20,7 +20,14 @@ Usage example for ESET
   Console.WriteLine(result);
 ```
 
-
+##Avast
+Usage example for Avast
+```
+  var exeLocation = @"C:\Program Files\AVAST Software\Avast\ashcmd.exe";
+  var scanner = new AvastScanner(exeLocation);
+  var result = scanner.Scan(@"C:\virus.txt");
+  Console.WriteLine(result);
+```
 
 You can use the eicar file for testing purposes: http://www.eicar.org/86-0-Intended-use.html
 
