@@ -9,6 +9,7 @@ namespace AvScan.ConsoleTest
     using System.Diagnostics;
     using WindowsDefender;
     using Avast;
+    using AVG;
 
     class Program
     {
@@ -18,10 +19,10 @@ namespace AvScan.ConsoleTest
             Console.ReadLine();
             var sw = Stopwatch.StartNew();
 
-            var exeLocation = @"C:\Program Files\AVAST Software\Avast\ashcmd.exe";
+            var exeLocation = @"C:\Program Files (x86)\AVG\Av\avgscanx.exe";
             var fileToScan = args[0];
 
-            var scanner = new AvastScanner(exeLocation);
+            var scanner = new AVGScanner(exeLocation);
             var result = scanner.Scan(fileToScan, 10000);
             sw.Stop();
 

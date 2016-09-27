@@ -1,27 +1,34 @@
-﻿using System;
-
-namespace AvScan.EsetScanner
+﻿namespace AvScan.AVG
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
     using Core;
 
-    public class EsetScanner: IScanner
+    public class AVGScanner : IScanner
     {
-        private readonly string esetClsLocation;
+        private const int RETURNCODE_OK = 0;
+        private const int RETURNCODE_USERSTOP = 1;
+        private const int RETURNCODE_ERROR = 2;
+        private const int RETURNCODE_WARNING = 3;
+        private const int RETURNCODE_PUPDETECTED = 4;
+        private const int RETURNCODE_VIRUSDETECTED = 5;
+        private const int RETURNCODE_PWDARCHIVE = 6;
+
+        private readonly string avgscanLocation;
 
         /// <summary>
         /// Creates a new scanner
         /// </summary>
-        /// <param name="esetClsLocation">The location of the ecls.exe file e.g. C:\Program Files\ESET\ESET Endpoint Antivirus\ecls.exe</param>
-        public EsetScanner(string esetClsLocation)
+        /// <param name="avgscanLocation">The location of the avgscanx.exe (x86) or avgscana.exe (x64) file e.g. C:\Program Files\AVAST Software\avast</param>
+        public AVGScanner(string avgscanLocation)
         {
-            if (!File.Exists(esetClsLocation))
+            if (!File.Exists(avgscanLocation))
             {
                 throw new FileNotFoundException();
             }
 
-            this.esetClsLocation = new FileInfo(esetClsLocation).FullName;
+            this.avgscanLocation = new FileInfo(avgscanLocation).FullName;
         }
 
         /// <summary>
@@ -41,9 +48,9 @@ namespace AvScan.EsetScanner
 
             var process = new Process();
 
-            var startInfo = new ProcessStartInfo(this.esetClsLocation)
+            var startInfo = new ProcessStartInfo(this.avgscanLocation)
             {
-                Arguments = $"\"{fileInfo.FullName}\" /no-log-console /preserve-time",
+                Arguments = $"/SCAN=\"{fileInfo.FullName}\"",
                 CreateNoWindow = true,
                 ErrorDialog = false,
                 WindowStyle = ProcessWindowStyle.Hidden,
@@ -62,14 +69,15 @@ namespace AvScan.EsetScanner
 
             switch (process.ExitCode)
             {
-                case 0:
+                case RETURNCODE_OK:
                     return ScanResult.NoThreatFound;
-                case 1:
-                case 50:
+                case RETURNCODE_VIRUSDETECTED:
+                case RETURNCODE_PUPDETECTED:
                     return ScanResult.ThreatFound;
-                case 10:
-                case 100:
-                    return ScanResult.Error;
+                case RETURNCODE_USERSTOP:
+                case RETURNCODE_ERROR:
+                case RETURNCODE_WARNING:
+                case RETURNCODE_PWDARCHIVE:
                 default:
                     return ScanResult.Error;
             }

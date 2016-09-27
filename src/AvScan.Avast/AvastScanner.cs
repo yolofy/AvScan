@@ -42,7 +42,7 @@
 
             var startInfo = new ProcessStartInfo(this.ashCmdLocation)
             {
-                Arguments = fileInfo.FullName + " /p=4 /s",
+                Arguments = $"\"{fileInfo.FullName}\" /p=4 /s",
                 CreateNoWindow = true,
                 ErrorDialog = false,
                 WindowStyle = ProcessWindowStyle.Hidden,

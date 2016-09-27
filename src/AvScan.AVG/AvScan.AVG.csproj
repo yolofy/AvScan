@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3F53BE1-0083-4FBF-9BAE-116B85F52B5D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{7A7E61A2-2D82-422A-8394-7CACA180E563}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AvScan.ConsoleTest</RootNamespace>
-    <AssemblyName>AvScan.ConsoleTest</AssemblyName>
+    <RootNamespace>AvScan.AVG</RootNamespace>
+    <AssemblyName>AvScan.AVG</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,32 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AvgScanner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AvScan.Avast\AvScan.Avast.csproj">
-      <Project>{BDBD66B0-88AA-4E75-896E-67357C35EFBD}</Project>
-      <Name>AvScan.Avast</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AvScan.AVG\AvScan.AVG.csproj">
-      <Project>{7A7E61A2-2D82-422A-8394-7CACA180E563}</Project>
-      <Name>AvScan.AVG</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AvScan.Core\AvScan.Core.csproj">
       <Project>{9E3C3E5A-6397-42F7-8579-3DB875B2817E}</Project>
       <Name>AvScan.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AvScan.EsetScanner\AvScan.EsetScanner.csproj">
-      <Project>{24512945-EF02-4F39-A638-71423F02520A}</Project>
-      <Name>AvScan.EsetScanner</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\AvScan.WindowsDefender\AvScan.WindowsDefender.csproj">
-      <Project>{63F6A44A-7B9E-488D-B8B7-282294B7E8EF}</Project>
-      <Name>AvScan.WindowsDefender</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.ConsoleTest", "AvSca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.Avast", "AvScan.Avast\AvScan.Avast.csproj", "{BDBD66B0-88AA-4E75-896E-67357C35EFBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvScan.AVG", "AvScan.AVG\AvScan.AVG.csproj", "{7A7E61A2-2D82-422A-8394-7CACA180E563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{BDBD66B0-88AA-4E75-896E-67357C35EFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDBD66B0-88AA-4E75-896E-67357C35EFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDBD66B0-88AA-4E75-896E-67357C35EFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A7E61A2-2D82-422A-8394-7CACA180E563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A7E61A2-2D82-422A-8394-7CACA180E563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A7E61A2-2D82-422A-8394-7CACA180E563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A7E61A2-2D82-422A-8394-7CACA180E563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
