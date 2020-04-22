@@ -1,41 +1,36 @@
-﻿namespace AvScan.Core
-{
-    using System.ComponentModel;
+﻿using System.ComponentModel;
 
+namespace AvScan.Core
+{
     /// <summary>
-    /// Result of the scan
+    ///     Result of the scan
     /// </summary>
     public enum ScanResult
     {
         /// <summary>
-        /// No threat was found
+        ///     No threat was found
         /// </summary>
-        [Description("No threat found")]
-        NoThreatFound,
+        [Description("No threat found")] NoThreatFound,
 
         /// <summary>
-        /// A threat was found
+        ///     A threat was found
         /// </summary>
-        [Description("Threat found")]
-        ThreatFound,
+        [Description("Threat found")] ThreatFound,
 
         /// <summary>
-        /// File not found
+        ///     File not found
         /// </summary>
         [Description("The file could not be found")]
         FileNotFound,
 
         /// <summary>
-        /// The scan timed out
+        ///     The scan timed out
         /// </summary>
-        [Description("Timeout")]
-        Timeout,
+        [Description("Timeout")] Timeout,
 
         /// <summary>
-        /// An error occured while scanning
+        ///     An error occured while scanning
         /// </summary>
-        [Description("Error")]
-        Error
-
+        [Description("Error")] Error
     }
 }

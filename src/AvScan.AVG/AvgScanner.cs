@@ -1,10 +1,9 @@
-﻿namespace AvScan.AVG
-{
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using Core;
+﻿using System.Diagnostics;
+using System.IO;
+using AvScan.Core;
 
+namespace AvScan.AVG
+{
     public class AVGScanner : IScanner
     {
         private const int RETURNCODE_OK = 0;
@@ -18,37 +17,34 @@
         private readonly string avgscanLocation;
 
         /// <summary>
-        /// Creates a new scanner
+        ///     Creates a new scanner
         /// </summary>
-        /// <param name="avgscanLocation">The location of the avgscanx.exe (x86) or avgscana.exe (x64) file e.g. C:\Program Files\AVAST Software\avast</param>
+        /// <param name="avgscanLocation">
+        ///     The location of the avgscanx.exe (x86) or avgscana.exe (x64) file e.g. C:\Program
+        ///     Files\AVAST Software\avast
+        /// </param>
         public AVGScanner(string avgscanLocation)
         {
-            if (!File.Exists(avgscanLocation))
-            {
-                throw new FileNotFoundException();
-            }
+            if (!File.Exists(avgscanLocation)) throw new FileNotFoundException();
 
             this.avgscanLocation = new FileInfo(avgscanLocation).FullName;
         }
 
         /// <summary>
-        /// Scan a single file
+        ///     Scan a single file
         /// </summary>
         /// <param name="file">The file to scan</param>
         /// <param name="timeoutInMs">The maximum time in milliseconds to take for this scan</param>
         /// <returns>The scan result</returns>
         public ScanResult Scan(string file, int timeoutInMs = 30000)
         {
-            if (!File.Exists(file))
-            {
-                return ScanResult.FileNotFound;
-            }
+            if (!File.Exists(file)) return ScanResult.FileNotFound;
 
             var fileInfo = new FileInfo(file);
 
             var process = new Process();
 
-            var startInfo = new ProcessStartInfo(this.avgscanLocation)
+            var startInfo = new ProcessStartInfo(avgscanLocation)
             {
                 Arguments = $"/SCAN=\"{fileInfo.FullName}\"",
                 CreateNoWindow = true,

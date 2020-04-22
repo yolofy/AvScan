@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
+using AvScan.AVG;
 
 namespace AvScan.ConsoleTest
 {
-    using System.Diagnostics;
-    using WindowsDefender;
-    using Avast;
-    using AVG;
-
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Press enter to scan");
             Console.ReadLine();

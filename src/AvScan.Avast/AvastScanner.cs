@@ -1,46 +1,39 @@
-﻿namespace AvScan.Avast
-{
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using Core;
+﻿using System.Diagnostics;
+using System.IO;
+using AvScan.Core;
 
+namespace AvScan.Avast
+{
     public class AvastScanner : IScanner
     {
         private readonly string ashCmdLocation;
 
         /// <summary>
-        /// Creates a new scanner
+        ///     Creates a new scanner
         /// </summary>
         /// <param name="ashCmdLocation">The location of the ashCmd.exe file e.g. C:\Program Files\AVAST Software\avast</param>
         public AvastScanner(string ashCmdLocation)
         {
-            if (!File.Exists(ashCmdLocation))
-            {
-                throw new FileNotFoundException();
-            }
+            if (!File.Exists(ashCmdLocation)) throw new FileNotFoundException();
 
             this.ashCmdLocation = new FileInfo(ashCmdLocation).FullName;
         }
 
         /// <summary>
-        /// Scan a single file
+        ///     Scan a single file
         /// </summary>
         /// <param name="file">The file to scan</param>
         /// <param name="timeoutInMs">The maximum time in milliseconds to take for this scan</param>
         /// <returns>The scan result</returns>
         public ScanResult Scan(string file, int timeoutInMs = 30000)
         {
-            if (!File.Exists(file))
-            {
-                return ScanResult.FileNotFound;
-            }
+            if (!File.Exists(file)) return ScanResult.FileNotFound;
 
             var fileInfo = new FileInfo(file);
 
             var process = new Process();
 
-            var startInfo = new ProcessStartInfo(this.ashCmdLocation)
+            var startInfo = new ProcessStartInfo(ashCmdLocation)
             {
                 Arguments = $"\"{fileInfo.FullName}\" /p=4 /s",
                 CreateNoWindow = true,
